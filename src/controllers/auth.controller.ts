@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { User } from '@prisma/client';
-import { CreateUserDto } from '@dtos/users.dto';
+import { CreateUserDto, VerifyToken } from '@dtos/users.dto';
 import { RequestWithUser } from '@interfaces/auth.interface';
 import AuthService from '@services/auth.service';
 
@@ -41,6 +41,16 @@ class AuthController {
       next(error);
     }
   };
+
+  public verify = async (req: RequestWithUser, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const tokenData: VerifyToken = req.body;
+      const result = await this.authService.VerifyEmail(tokenData);
+      res.status(200).json({ data: result, message: 'Email verified successfully' });
+    } catch (error) {
+      next(error);
+    }
+  }
 }
 
 export default AuthController;

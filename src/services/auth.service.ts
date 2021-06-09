@@ -2,12 +2,10 @@ import bcrypt from 'bcrypt';
 import config from 'config';
 import jwt from 'jsonwebtoken';
 import { PrismaClient, User, Token } from '@prisma/client';
-import { CreateUserDto, UserLoginDto } from '@dtos/users.dto';
+import { CreateUserDto, UserLoginDto, VerifyToken } from '@dtos/users.dto';
 import HttpException from '@exceptions/HttpException';
 import { DataStoredInToken, TokenData } from '@interfaces/auth.interface';
 import { isEmpty } from '@utils/util';
-import BCRYPT_SALT from './../configs';
-import url from './../configs';
 import MailService from './mail.service';
 import crypto from 'crypto';
 
@@ -19,11 +17,11 @@ class AuthService {
     if (isEmpty(userData)) throw new HttpException(400, "You're not userData");
 
     const findUser: User = await this.users.findUnique({ where: { email: userData.email } });
-    if (findUser) throw new HttpException(409, `You're email ${userData.email} already exists`);
+    if (findUser) throw new HttpException(409, `${userData.email} already exists`);
 
     const hashedPassword = await bcrypt.hash(userData.password, 10);
 
-    const createUserData: Promise<User> = this.users.create({ data: { ...userData, password: hashedPassword } });
+    const createUserData = await this.users.create({ data: { ...userData, password: hashedPassword } });
 
     // Request email verification
     await this.RequestEmailVerification(userData.email);
@@ -90,7 +88,7 @@ class AuthService {
       });
 
     const verifyToken = crypto.randomBytes(32).toString('hex');
-    const hash = await bcrypt.hash(verifyToken, BCRYPT_SALT);
+    const hash = await bcrypt.hash(verifyToken, 10);
 
     await this.token.create({
       data: {
@@ -98,10 +96,48 @@ class AuthService {
         token: hash,
       },
     });
-    const link = `${url.CLIENT_URL}/email-verification?uid=${user.id}&verifyToken=${verifyToken}`;
+    const link = `${process.env.CLIENT_URL}/email-verification?uid=${user.id}&verifyToken=${verifyToken}`;
+    console.log(link);
 
     // Send Mail
     await new MailService(user).sendEmailVerificationMail(link);
+
+    return;
+  }
+
+  async VerifyEmail(tokenData: VerifyToken) {
+    const user = await this.users.findFirst({
+      where: {
+        id: tokenData.id,
+      },
+    });
+    if (!user) throw new HttpException(404, 'User does not exist');
+    if (user.isVerified) throw new HttpException(409, 'Email is already verified');
+
+    const VToken = await this.token.findFirst({
+      where: {
+        userId: user.id,
+      },
+    });
+    if (!VToken) throw new HttpException(401, 'Invalid or expired password reset token');
+
+    const isValid = await bcrypt.compare(tokenData.token, VToken.token);
+    if (!isValid) throw new HttpException(401, 'Invalid or expired password reset token');
+
+    await this.users.update({
+      where: {
+        id: user.id,
+      },
+      data: {
+        isVerified: true,
+      },
+    });
+
+    await this.token.delete({
+      where: {
+        id: VToken.id,
+      },
+    });
 
     return;
   }

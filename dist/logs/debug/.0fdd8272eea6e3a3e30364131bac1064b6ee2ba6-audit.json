@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\HP\\OneDrive\\Desktop\\talent\\dist\\logs\\debug\\.0fdd8272eea6e3a3e30364131bac1064b6ee2ba6-audit.json",
+    "files": [
+        {
+            "date": 1623208578401,
+            "name": "C:\\Users\\HP\\OneDrive\\Desktop\\talent\\dist\\logs\\debug\\2021-06-08.log",
+            "hash": "8664b8833a5414c63d45d92902d640ec"
+        }
+    ]
+}

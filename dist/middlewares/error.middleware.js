@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const logger_1 = require("@utils/logger");
+const logger_1 = require("../utils/logger");
 const errorMiddleware = (error, req, res, next) => {
     try {
         const status = error.status || 500;

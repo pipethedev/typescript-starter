@@ -1,0 +1,12 @@
+2021-06-08 20:16:31 error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Function.listen (C:\Users\HP\OneDrive\Desktop\talent\node_modules\express\lib\application.js:618:24)
+    at App.listen (C:\Users\HP\OneDrive\Desktop\talent\dist\app.js:26:18)
+    at Object.<anonymous> (C:\Users\HP\OneDrive\Desktop\talent\dist\server.js:13:5)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Module.load (internal/modules/cjs/loader.js:933:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:774:14)

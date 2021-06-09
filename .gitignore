@@ -1,5 +1,7 @@
 node_modules
+dist
 
+src/logs
 # production env files
 .env
 src/configs/env/prod.env.json

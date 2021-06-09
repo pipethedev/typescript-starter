@@ -1,5 +1,5 @@
 import SMTPTransport from 'nodemailer/lib/smtp-transport';
-import { UserMailDto } from '@/dtos/users.dto';
+import { UserMailDto } from '../dtos/users.dto';
 declare class MailService {
     user: UserMailDto;
     constructor(user: UserMailDto);

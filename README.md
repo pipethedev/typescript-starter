@@ -34,8 +34,9 @@ Make sure you have mysql or postgresql installed, you could use any database of 
 
 | Routes                                                           | Description                              | Auth roles                            |
 | -----------------------------------------------------------------|----------------------------------------- | ------------------------------------- |
-| [POST] &nbsp; /api/auth/sign-up                                  | Create a new account                     | none
-| [POST] &nbsp; /api/auth/sign-in                                  | User sign in                             | none
+| [POST] &nbsp; /api/auth/signup                                   | Create a new account                     | none
+| [POST] &nbsp; /api/auth/login                                    | User sign in                             | none
+| [POST] &nbsp; /api/auth/logout                                   | Logout a user                            | none
 | [POST] &nbsp; /api/auth/request-email-verification               | Resend verfication email                 | none
 | [POST] &nbsp; /api/auth/verify-email                             | Email verification                       | none
 | [POST] &nbsp; /api/auth/request-password-reset                   | Sends a request password email           | none

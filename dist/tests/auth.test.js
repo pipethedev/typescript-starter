@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const bcrypt_1 = tslib_1.__importDefault(require("bcrypt"));
 const supertest_1 = tslib_1.__importDefault(require("supertest"));
-const app_1 = tslib_1.__importDefault(require("@/app"));
-const auth_route_1 = tslib_1.__importDefault(require("@routes/auth.route"));
+const app_1 = tslib_1.__importDefault(require("../app"));
+const auth_route_1 = tslib_1.__importDefault(require("../routes/auth.route"));
 afterAll(async () => {
     await new Promise(resolve => setTimeout(() => resolve(), 500));
 });

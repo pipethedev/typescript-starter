@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const bcrypt_1 = tslib_1.__importDefault(require("bcrypt"));
 const client_1 = require("@prisma/client");
-const HttpException_1 = tslib_1.__importDefault(require("@exceptions/HttpException"));
-const util_1 = require("@utils/util");
+const HttpException_1 = tslib_1.__importDefault(require("../exceptions/HttpException"));
+const util_1 = require("../utils/util");
 class UserService {
     constructor() {
         this.users = new client_1.PrismaClient().user;

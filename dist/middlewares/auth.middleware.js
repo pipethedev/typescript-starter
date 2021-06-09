@@ -4,7 +4,7 @@ const tslib_1 = require("tslib");
 const config_1 = tslib_1.__importDefault(require("config"));
 const jsonwebtoken_1 = tslib_1.__importDefault(require("jsonwebtoken"));
 const client_1 = require("@prisma/client");
-const HttpException_1 = tslib_1.__importDefault(require("@exceptions/HttpException"));
+const HttpException_1 = tslib_1.__importDefault(require("../exceptions/HttpException"));
 const authMiddleware = async (req, res, next) => {
     try {
         const Authorization = req.cookies['Authorization'] || req.header('Authorization').split('Bearer ')[1] || null;

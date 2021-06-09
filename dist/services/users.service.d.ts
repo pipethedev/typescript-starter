@@ -1,5 +1,5 @@
 import { User } from '@prisma/client';
-import { CreateUserDto } from '@dtos/users.dto';
+import { CreateUserDto } from '../dtos/users.dto';
 declare class UserService {
     users: import(".prisma/client").Prisma.UserDelegate<import(".prisma/client").Prisma.RejectOnNotFound | import(".prisma/client").Prisma.RejectPerOperation>;
     findAllUser(): Promise<User[]>;

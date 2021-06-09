@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const nodemailer_1 = tslib_1.__importDefault(require("nodemailer"));
-const HttpException_1 = tslib_1.__importDefault(require("@exceptions/HttpException"));
+const HttpException_1 = tslib_1.__importDefault(require("../exceptions/HttpException"));
 const configs_1 = tslib_1.__importDefault(require("./../configs"));
 const configs_2 = tslib_1.__importDefault(require("./../configs"));
 class MailService {

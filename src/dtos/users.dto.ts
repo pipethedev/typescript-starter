@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsNumber, IsString, MinLength } from "class-validator";
 
 class CreateUserDto {
   @IsNotEmpty({ message: 'Name is required' })
@@ -27,4 +27,14 @@ class UserMailDto {
   name: string;
   email: string;
 }
-export { CreateUserDto, UserLoginDto, UserMailDto };
+
+class VerifyToken {
+  @IsNotEmpty({ message: 'Verification token is required' })
+  @IsString()
+  token: string;
+
+  @IsNotEmpty({ message: 'User id is required' })
+  @IsNumber()
+  id: number;
+}
+export { CreateUserDto, UserLoginDto, UserMailDto, VerifyToken };

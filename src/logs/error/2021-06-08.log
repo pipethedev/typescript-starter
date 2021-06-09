@@ -143,3 +143,212 @@ Error: listen EADDRINUSE: address already in use :::3000
     at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
     at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
     at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+2021-06-08 20:20:00 error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Function.listen (C:\Users\HP\OneDrive\Desktop\talent\node_modules\express\lib\application.js:618:24)
+    at App.listen (C:\Users\HP\OneDrive\Desktop\talent\src\app.ts:32:14)
+    at Object.<anonymous> (C:\Users\HP\OneDrive\Desktop\talent\src\server.ts:14:5)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+2021-06-08 20:35:48 error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Function.listen (C:\Users\HP\OneDrive\Desktop\talent\node_modules\express\lib\application.js:618:24)
+    at App.listen (C:\Users\HP\OneDrive\Desktop\talent\src\app.ts:32:14)
+    at Object.<anonymous> (C:\Users\HP\OneDrive\Desktop\talent\src\server.ts:14:5)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+2021-06-08 20:59:03 error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Function.listen (C:\Users\HP\OneDrive\Desktop\talent\node_modules\express\lib\application.js:618:24)
+    at App.listen (C:\Users\HP\OneDrive\Desktop\talent\src\app.ts:32:14)
+    at Object.<anonymous> (C:\Users\HP\OneDrive\Desktop\talent\src\server.ts:14:5)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+2021-06-08 21:00:52 error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Function.listen (C:\Users\HP\OneDrive\Desktop\talent\node_modules\express\lib\application.js:618:24)
+    at App.listen (C:\Users\HP\OneDrive\Desktop\talent\src\app.ts:32:14)
+    at Object.<anonymous> (C:\Users\HP\OneDrive\Desktop\talent\src\server.ts:14:5)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+2021-06-08 21:13:15 error: [POST] /api/auth/signup >> StatusCode:: 400, Message:: name must be a string,Name is required, email must be an email,Email address is required, password must be a string,password must be longer than or equal to 7 characters,Password is required
+2021-06-08 21:13:52 error: [POST] /api/auth/signup >> StatusCode:: 404, Message:: Email does not exist
+2021-06-08 21:15:13 error: [POST] /api/auth/signup >> StatusCode:: 500, Message:: data must be a string or Buffer and salt must either be a salt string or a number of rounds
+2021-06-08 21:17:59 error: [POST] /api/auth/signup >> StatusCode:: 500, Message:: data must be a string or Buffer and salt must either be a salt string or a number of rounds
+2021-06-08 21:18:48 error: [POST] /api/auth/signup >> StatusCode:: 409, Message:: You're email davmuri1414@gmail.com already exists
+2021-06-08 21:19:19 error: [POST] /api/auth/signup >> StatusCode:: 500, Message:: connect ECONNREFUSED 127.0.0.1:587
+2021-06-08 21:24:12 error: uncaughtException: Cannot find module './../configs'
+Require stack:
+- C:\Users\HP\OneDrive\Desktop\talent\src\services\auth.service.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\controllers\auth.controller.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\routes\auth.route.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\server.ts
+Error: Cannot find module './../configs'
+Require stack:
+- C:\Users\HP\OneDrive\Desktop\talent\src\services\auth.service.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\controllers\auth.controller.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\routes\auth.route.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\server.ts
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:885:15)
+    at Function.Module._resolveFilename (C:\Users\HP\OneDrive\Desktop\talent\node_modules\tsconfig-paths\lib\register.js:75:40)
+    at Function.Module._load (internal/modules/cjs/loader.js:730:27)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (C:\Users\HP\OneDrive\Desktop\talent\src\services\auth.service.ts:10:1)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+2021-06-08 21:25:17 error: uncaughtException: Cannot find module './../configs'
+Require stack:
+- C:\Users\HP\OneDrive\Desktop\talent\src\services\auth.service.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\controllers\auth.controller.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\routes\auth.route.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\server.ts
+Error: Cannot find module './../configs'
+Require stack:
+- C:\Users\HP\OneDrive\Desktop\talent\src\services\auth.service.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\controllers\auth.controller.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\routes\auth.route.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\server.ts
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:885:15)
+    at Function.Module._resolveFilename (C:\Users\HP\OneDrive\Desktop\talent\node_modules\tsconfig-paths\lib\register.js:75:40)
+    at Function.Module._load (internal/modules/cjs/loader.js:730:27)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (C:\Users\HP\OneDrive\Desktop\talent\src\services\auth.service.ts:10:1)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+2021-06-08 21:26:33 error: uncaughtException: Cannot find module './../configs'
+Require stack:
+- C:\Users\HP\OneDrive\Desktop\talent\src\services\auth.service.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\controllers\auth.controller.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\routes\auth.route.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\server.ts
+Error: Cannot find module './../configs'
+Require stack:
+- C:\Users\HP\OneDrive\Desktop\talent\src\services\auth.service.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\controllers\auth.controller.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\routes\auth.route.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\server.ts
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:885:15)
+    at Function.Module._resolveFilename (C:\Users\HP\OneDrive\Desktop\talent\node_modules\tsconfig-paths\lib\register.js:75:40)
+    at Function.Module._load (internal/modules/cjs/loader.js:730:27)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (C:\Users\HP\OneDrive\Desktop\talent\src\services\auth.service.ts:10:1)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+2021-06-08 21:27:41 error: uncaughtException: Cannot find module './../configs'
+Require stack:
+- C:\Users\HP\OneDrive\Desktop\talent\src\services\auth.service.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\controllers\auth.controller.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\routes\auth.route.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\server.ts
+Error: Cannot find module './../configs'
+Require stack:
+- C:\Users\HP\OneDrive\Desktop\talent\src\services\auth.service.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\controllers\auth.controller.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\routes\auth.route.ts
+- C:\Users\HP\OneDrive\Desktop\talent\src\server.ts
+    at Function.Module._resolveFilename (internal/modules/cjs/loader.js:885:15)
+    at Function.Module._resolveFilename (C:\Users\HP\OneDrive\Desktop\talent\node_modules\tsconfig-paths\lib\register.js:75:40)
+    at Function.Module._load (internal/modules/cjs/loader.js:730:27)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (C:\Users\HP\OneDrive\Desktop\talent\src\services\auth.service.ts:10:1)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+2021-06-08 21:48:52 error: [POST] /api/auth/signup >> StatusCode:: 500, Message:: 7224:error:1408F10B:SSL routines:ssl3_get_record:wrong version number:c:\ws\deps\openssl\openssl\ssl\record\ssl3_record.c:332:
+
+2021-06-08 21:55:13 error: [POST] /api/auth/signup >> StatusCode:: 409, Message:: You're email davmuri1414@gmail.com already exists
+2021-06-08 22:01:07 error: uncaughtException: Route.post() requires a callback function but got a [object Undefined]
+Error: Route.post() requires a callback function but got a [object Undefined]
+    at Route.<computed> [as post] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\express\lib\router\route.js:202:15)
+    at Function.proto.<computed> [as post] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\express\lib\router\index.js:510:19)
+    at AuthRoute.initializeRoutes (C:\Users\HP\OneDrive\Desktop\talent\src\routes\auth.route.ts:20:17)
+    at new AuthRoute (C:\Users\HP\OneDrive\Desktop\talent\src\routes\auth.route.ts:14:10)
+    at Object.<anonymous> (C:\Users\HP\OneDrive\Desktop\talent\src\server.ts:12:58)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+    at Module.load (internal/modules/cjs/loader.js:933:32)
+2021-06-08 22:01:56 error: uncaughtException: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/auth.controller.ts[0m:[93m48[0m:[93m13[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m48[0m     } catch()
+[7m  [0m [91m            ~[0m
+[96msrc/controllers/auth.controller.ts[0m:[93m49[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'{' expected.
+
+[7m49[0m   }
+[7m  [0m [91m  ~[0m
+
+TSError: ⨯ Unable to compile TypeScript:
+[96msrc/controllers/auth.controller.ts[0m:[93m48[0m:[93m13[0m - [91merror[0m[90m TS1003: [0mIdentifier expected.
+
+[7m48[0m     } catch()
+[7m  [0m [91m            ~[0m
+[96msrc/controllers/auth.controller.ts[0m:[93m49[0m:[93m3[0m - [91merror[0m[90m TS1005: [0m'{' expected.
+
+[7m49[0m   }
+[7m  [0m [91m  ~[0m
+
+    at createTSError (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:587:12)
+    at reportTSError (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:591:19)
+    at getOutput (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1174:34)
+    at Object.compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1189:32)
+    at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:42)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+    at Module.load (internal/modules/cjs/loader.js:933:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:774:14)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+2021-06-08 22:02:40 error: uncaughtException: Missing initializer in const declaration
+C:\Users\HP\OneDrive\Desktop\talent\src\controllers\auth.controller.ts:42
+                const token;
+                      ^^^^^
+
+SyntaxError: Missing initializer in const declaration
+    at wrapSafe (internal/modules/cjs/loader.js:984:16)
+    at Module._compile (internal/modules/cjs/loader.js:1032:27)
+    at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+    at Module.load (internal/modules/cjs/loader.js:933:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:774:14)
+    at Module.require (internal/modules/cjs/loader.js:957:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (C:\Users\HP\OneDrive\Desktop\talent\src\routes\auth.route.ts:2:1)
+2021-06-08 22:08:14 error: [POST] /api/auth/verify >> StatusCode:: 400, Message:: token must be a string,Verification token is required, id must be a string,User id is required
+2021-06-08 22:27:00 error: [POST] /api/auth/verify >> StatusCode:: 400, Message:: Verification token is required, id must be a string
+2021-06-08 22:27:08 error: [POST] /api/auth/verify >> StatusCode:: 400, Message:: Verification token is required, id must be a string
+2021-06-08 22:28:17 error: [POST] /api/auth/verify >> StatusCode:: 400, Message:: id must be a string
+2021-06-08 22:29:31 error: [POST] /api/auth/verify >> StatusCode:: 404, Message:: User does not exist
+2021-06-08 22:29:51 error: [POST] /api/auth/verify >> StatusCode:: 401, Message:: Invalid or expired password reset token
