@@ -17,6 +17,7 @@ class AuthService {
     if (findUser) throw new HttpException(409, `You're email ${userData.email} already exists`);
 
     const hashedPassword = await bcrypt.hash(userData.password, 10);
+
     const createUserData: Promise<User> = this.users.create({ data: { ...userData, password: hashedPassword } });
 
     return createUserData;

@@ -114,6 +114,9 @@ definitions:
       id:
         type: integer
         description: user Id
+      name:
+        type: string
+        description: user Name
       email:
         type: string
         description: user Email

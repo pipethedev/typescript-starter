@@ -1,0 +1,21 @@
+2021-06-08 16:51:05 error: [POST] /users >> StatusCode:: 400, Message:: property id should not exist
+2021-06-08 16:51:23 error: [POST] /users >> StatusCode:: 500, Message:: 
+Invalid `prisma.user.create()` invocation:
+
+{
+  data: {
+    name: 'Muritala David',
+    ~~~~
+    email: 'davmuri1414@gmail.com',
+    password: '$2b$10$7FXvL0VJo/6NkIBkmXFg2.5ZzPqQKMXvYbGgOGblmlrOdoif3aQgG'
+  }
+}
+
+Unknown arg `name` in data.name for type UserCreateInput. Did you mean `email`? Available args:
+type UserCreateInput {
+  email: String
+  password: String
+}
+
+
+2021-06-08 17:01:05 error: [POST] /users >> StatusCode:: 409, Message:: You're email davmuri1414@gmail.com already exists

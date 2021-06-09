@@ -10,23 +10,22 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model User {
-  id      Int      @default(autoincrement()) @id
-  email   String   @unique
-  name    String?
-  profileImg String?
-  posts   Post[]
-}
-
 model Post {
   id        Int      @default(autoincrement()) @id
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   title     String   @db.VarChar(255)
-  image     String   @db.VarChar(350)
   content   String?
   published Boolean  @default(false)
   author    User     @relation(fields: [authorId], references: [id])
   authorId  Int
 }
 
+model User {
+  id      Int      @default(autoincrement()) @id
+  email   String   @unique
+  name    String
+  img     String?
+  password String
+  posts   Post[]
+}

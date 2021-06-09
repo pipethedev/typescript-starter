@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import request from 'supertest';
 import { User } from '@prisma/client';
 import App from '@/app';
-import { CreateUserDto } from '@dtos/users.dto';
+import { CreateUserDto, UserLoginDto } from '@dtos/users.dto';
 import AuthRoute from '@routes/auth.route';
 
 afterAll(async () => {
@@ -13,6 +13,7 @@ describe('Testing Auth', () => {
   describe('[POST] /signup', () => {
     it('response should have the Create userData', async () => {
       const userData: CreateUserDto = {
+        name: 'Random Dev',
         email: 'test@email.com',
         password: 'q1w2e3r4',
       };
@@ -34,7 +35,7 @@ describe('Testing Auth', () => {
 
   describe('[POST] /login', () => {
     it('response should have the Set-Cookie header with the Authorization token', async () => {
-      const userData: CreateUserDto = {
+      const userData: UserLoginDto = {
         email: 'test@email.com',
         password: 'q1w2e3r4',
       };
@@ -56,26 +57,28 @@ describe('Testing Auth', () => {
     });
   });
 
-  // describe('[POST] /logout', () => {
-  //   it('logout Set-Cookie Authorization=; Max-age=0', async () => {
-  //     const user: User = {
-  //       id: 1,
-  //       email: 'test@email.com',
-  //       password: 'q1w2e3r4',
-  //     };
+  describe('[POST] /logout', () => {
+    it('logout Set-Cookie Authorization=; Max-age=0', async () => {
+      const user: User = {
+        id: 1,
+        name: 'Random Dev',
+        img: '',
+        email: 'test@email.com',
+        password: 'q1w2e3r4',
+      };
 
-  //     const authRoute = new AuthRoute();
-  //     const users = authRoute.authController.authService.users;
+      const authRoute = new AuthRoute();
+      const users = authRoute.authController.authService.users;
 
-  //     users.findFirst = jest.fn().mockReturnValue({
-  //       ...user,
-  //       password: await bcrypt.hash(user.password, 10),
-  //     });
+      users.findFirst = jest.fn().mockReturnValue({
+        ...user,
+        password: await bcrypt.hash(user.password, 10),
+      });
 
-  //     const app = new App([authRoute]);
-  //     return request(app.getServer())
-  //       .post(`${authRoute.path}logout`)
-  //       .expect('Set-Cookie', /^Authorization=\;/);
-  //   });
-  // });
+      const app = new App([authRoute]);
+      return request(app.getServer())
+        .post(`${authRoute.path}logout`)
+        .expect('Set-Cookie', /^Authorization=\;/);
+    });
+  });
 });
