@@ -64,6 +64,7 @@ describe('Testing Auth', () => {
         name: 'Random Dev',
         img: '',
         email: 'test@email.com',
+        isVerified: true,
         password: 'q1w2e3r4',
       };
 
@@ -78,7 +79,7 @@ describe('Testing Auth', () => {
       const app = new App([authRoute]);
       return request(app.getServer())
         .post(`${authRoute.path}logout`)
-        .expect('Set-Cookie', /^Authorization=\;/);
+        .expect('Set-Cookie', /^Authorization=;/);
     });
   });
 });

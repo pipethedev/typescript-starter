@@ -85,7 +85,7 @@ class AuthService {
     if (token)
       await this.token.delete({
         where: {
-          userId: user.id,
+          id: token.id,
         },
       });
 
@@ -93,9 +93,10 @@ class AuthService {
     const hash = await bcrypt.hash(verifyToken, BCRYPT_SALT);
 
     await this.token.create({
-      userId: user.id,
-      token: hash,
-      createdAt: Date.now(),
+      data: {
+        userId: user.id,
+        token: hash,
+      },
     });
     const link = `${url.CLIENT_URL}/email-verification?uid=${user.id}&verifyToken=${verifyToken}`;
 

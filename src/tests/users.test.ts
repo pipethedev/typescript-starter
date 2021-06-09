@@ -59,6 +59,7 @@ describe('Testing Users', () => {
   describe('[POST] /users', () => {
     it('response Create user', async () => {
       const userData: CreateUserDto = {
+        name: 'Random Dev',
         email: 'test@email.com',
         password: 'q1w2e3r4',
       };
@@ -82,6 +83,7 @@ describe('Testing Users', () => {
     it('response Update user', async () => {
       const userId = 1;
       const userData: CreateUserDto = {
+        name: 'James pipe',
         email: 'test@email.com',
         password: 'q1w2e3r4',
       };
@@ -109,6 +111,7 @@ describe('Testing Users', () => {
     it('response Delete user', async () => {
       const userId = 1;
       const userData: CreateUserDto = {
+        name: 'Random Dev',
         email: 'test@email.com',
         password: 'q1w2e3r4',
       };

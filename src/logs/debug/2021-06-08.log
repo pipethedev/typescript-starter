@@ -143,3 +143,92 @@ type UserCreateInput {
 2021-06-08 18:03:27 info: ======= ENV: development =======
 2021-06-08 18:03:27 info: 🚀 App listening on the port 3000
 2021-06-08 18:03:27 info: =================================
+2021-06-08 18:08:37 info: =================================
+2021-06-08 18:08:37 info: ======= ENV: development =======
+2021-06-08 18:08:37 info: 🚀 App listening on the port 3000
+2021-06-08 18:08:37 info: =================================
+2021-06-08 19:29:26 info: =================================
+2021-06-08 19:29:26 info: ======= ENV: development =======
+2021-06-08 19:29:26 info: 🚀 App listening on the port 3000
+2021-06-08 19:29:26 info: =================================
+2021-06-08 19:30:47 info: =================================
+2021-06-08 19:30:47 info: ======= ENV: development =======
+2021-06-08 19:30:47 info: 🚀 App listening on the port 3000
+2021-06-08 19:30:47 info: =================================
+2021-06-08 19:31:10 info: =================================
+2021-06-08 19:31:10 info: ======= ENV: development =======
+2021-06-08 19:31:10 info: 🚀 App listening on the port 3000
+2021-06-08 19:31:10 info: =================================
+2021-06-08 19:31:10 info: [0mGET / [36m304[0m 10.702 ms - -[0m
+2021-06-08 19:31:33 info: [0mGET /api-docs/ [36m304[0m 21.182 ms - -[0m
+2021-06-08 19:31:33 info: [0mGET /api-docs/swagger-ui.css [36m304[0m 8.598 ms - -[0m
+2021-06-08 19:31:33 info: [0mGET /api-docs/swagger-ui-bundle.js [36m304[0m 21.882 ms - -[0m
+2021-06-08 19:31:33 info: [0mGET /api-docs/swagger-ui-standalone-preset.js [36m304[0m 27.894 ms - -[0m
+2021-06-08 19:31:33 info: [0mGET /api-docs/swagger-ui-init.js [32m200[0m 15.415 ms - -[0m
+2021-06-08 19:32:08 info: =================================
+2021-06-08 19:32:08 info: ======= ENV: development =======
+2021-06-08 19:32:08 info: 🚀 App listening on the port 3000
+2021-06-08 19:32:08 info: =================================
+2021-06-08 19:32:48 error: [POST] /users >> StatusCode:: 400, Message:: property title should not exist, property note should not exist, property token should not exist, property started_at should not exist, property duration should not exist, property caller_id should not exist, property participants should not exist, name must be a string,Name is required, email must be an email,Email address is required, password must be a string,password must be longer than or equal to 7 characters,Password is required
+2021-06-08 19:32:48 info: [0mPOST /users [33m400[0m 127.029 ms - 453[0m
+2021-06-08 19:33:10 error: [POST] /users >> StatusCode:: 400, Message:: name must be a string,Name is required, email must be an email,Email address is required, password must be a string,password must be longer than or equal to 7 characters,Password is required
+2021-06-08 19:33:10 info: [0mPOST /users [33m400[0m 25.361 ms - 204[0m
+2021-06-08 19:34:24 info: =================================
+2021-06-08 19:34:24 info: ======= ENV: development =======
+2021-06-08 19:34:24 info: 🚀 App listening on the port 3000
+2021-06-08 19:34:24 info: =================================
+2021-06-08 19:34:31 info: [0mGET /api-docs/ [36m304[0m 29.058 ms - -[0m
+2021-06-08 19:34:32 info: [0mGET /api-docs/swagger-ui-init.js [36m304[0m 0.879 ms - -[0m
+2021-06-08 19:34:32 info: [0mGET /api-docs/swagger-ui.css [36m304[0m 31.652 ms - -[0m
+2021-06-08 19:34:32 info: [0mGET /api-docs/swagger-ui-bundle.js [36m304[0m 31.824 ms - -[0m
+2021-06-08 19:34:32 info: [0mGET /api-docs/swagger-ui-standalone-preset.js [36m304[0m 61.203 ms - -[0m
+2021-06-08 19:34:33 info: [0mGET /api-docs/favicon-32x32.png [36m304[0m 4.416 ms - -[0m
+2021-06-08 19:34:41 info: [0mPOST /users [33m404[0m 45.160 ms - 145[0m
+2021-06-08 19:35:47 info: =================================
+2021-06-08 19:35:47 info: ======= ENV: development =======
+2021-06-08 19:35:47 info: 🚀 App listening on the port 3000
+2021-06-08 19:35:47 info: =================================
+2021-06-08 19:35:52 info: [0mGET /api-docs/ [36m304[0m 16.256 ms - -[0m
+2021-06-08 19:35:53 info: [0mGET /api-docs/swagger-ui.css [36m304[0m 5.691 ms - -[0m
+2021-06-08 19:35:53 info: [0mGET /api-docs/swagger-ui-init.js [36m304[0m 0.951 ms - -[0m
+2021-06-08 19:35:53 info: [0mGET /api-docs/swagger-ui-bundle.js [36m304[0m 3.831 ms - -[0m
+2021-06-08 19:35:53 info: [0mGET /api-docs/swagger-ui-standalone-preset.js [36m304[0m 3.620 ms - -[0m
+2021-06-08 19:35:54 info: [0mGET /api-docs/favicon-32x32.png [36m304[0m 2.364 ms - -[0m
+2021-06-08 19:35:56 info: [0mGET / [33m404[0m 3.865 ms - 139[0m
+2021-06-08 19:36:02 info: [0mGET /api-docs/ [36m304[0m 1.500 ms - -[0m
+2021-06-08 19:36:02 info: [0mGET /api-docs/swagger-ui.css [36m304[0m 1.216 ms - -[0m
+2021-06-08 19:36:02 info: [0mGET /api-docs/swagger-ui-init.js [36m304[0m 1.127 ms - -[0m
+2021-06-08 19:36:02 info: [0mGET /api-docs/swagger-ui-bundle.js [36m304[0m 7.195 ms - -[0m
+2021-06-08 19:36:02 info: [0mGET /api-docs/swagger-ui-standalone-preset.js [36m304[0m 21.226 ms - -[0m
+2021-06-08 19:36:06 info: [0mGET /api [32m200[0m 3.742 ms - 100[0m
+2021-06-08 19:38:29 info: =================================
+2021-06-08 19:38:29 info: ======= ENV: development =======
+2021-06-08 19:38:29 info: 🚀 App listening on the port 3000
+2021-06-08 19:38:29 info: =================================
+2021-06-08 19:38:53 info: [0mGET /api-docs/ [36m304[0m 74.347 ms - -[0m
+2021-06-08 19:38:54 info: [0mGET /api-docs/swagger-ui.css [36m304[0m 11.044 ms - -[0m
+2021-06-08 19:38:54 info: [0mGET /api-docs/swagger-ui-bundle.js [36m304[0m 14.766 ms - -[0m
+2021-06-08 19:38:54 info: [0mGET /api-docs/swagger-ui-init.js [36m304[0m 2.240 ms - -[0m
+2021-06-08 19:38:54 info: [0mGET /api-docs/swagger-ui-standalone-preset.js [36m304[0m 7.175 ms - -[0m
+2021-06-08 19:39:30 info: =================================
+2021-06-08 19:39:30 info: ======= ENV: development =======
+2021-06-08 19:39:30 info: 🚀 App listening on the port 3000
+2021-06-08 19:39:30 info: =================================
+2021-06-08 19:40:40 info: =================================
+2021-06-08 19:40:40 info: ======= ENV: development =======
+2021-06-08 19:40:40 info: 🚀 App listening on the port 3000
+2021-06-08 19:40:40 info: =================================
+2021-06-08 19:41:01 info: =================================
+2021-06-08 19:41:01 info: ======= ENV: development =======
+2021-06-08 19:41:01 info: 🚀 App listening on the port 3000
+2021-06-08 19:41:01 info: =================================
+2021-06-08 19:41:09 info: [0mGET /api [36m304[0m 17.747 ms - -[0m
+2021-06-08 19:41:14 info: [0mPOST /users [33m404[0m 47.050 ms - 145[0m
+2021-06-08 19:41:29 error: [POST] /api/auth/signup >> StatusCode:: 400, Message:: name must be a string,Name is required, email must be an email,Email address is required, password must be a string,password must be longer than or equal to 7 characters,Password is required
+2021-06-08 19:41:29 info: [0mPOST /api/auth/signup [33m400[0m 12.999 ms - 204[0m
+2021-06-08 19:42:46 error: [POST] /api/auth/signup >> StatusCode:: 404, Message:: Email does not exist
+2021-06-08 19:42:46 info: [0mPOST /api/auth/signup [33m404[0m 647.249 ms - 34[0m
+2021-06-08 19:44:58 info: =================================
+2021-06-08 19:44:58 info: ======= ENV: development =======
+2021-06-08 19:44:58 info: 🚀 App listening on the port 3000
+2021-06-08 19:44:58 info: =================================
