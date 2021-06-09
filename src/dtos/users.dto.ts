@@ -1,4 +1,5 @@
-import { IsEmail, IsNotEmpty, IsNumber, IsString, MinLength } from "class-validator";
+import { IsEmail, IsNotEmpty, IsNumber, IsString, Matches, MinLength } from 'class-validator';
+import { Match } from '@utils/match.decorator';
 
 class CreateUserDto {
   @IsNotEmpty({ message: 'Name is required' })
@@ -11,8 +12,14 @@ class CreateUserDto {
 
   @IsNotEmpty({ message: 'Password is required' })
   @MinLength(7)
+  @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, { message: 'password too weak' })
   @IsString()
   public password: string;
+
+  @IsString()
+  @MinLength(7)
+  @Match('password')
+  passwordConfirm: string;
 }
 
 class UserLoginDto {
@@ -37,4 +44,33 @@ class VerifyToken {
   @IsNumber()
   id: number;
 }
-export { CreateUserDto, UserLoginDto, UserMailDto, VerifyToken };
+
+class MailDto {
+  @IsNotEmpty({ message: 'Email address is required' })
+  @IsString()
+  @IsEmail()
+  email: string;
+}
+
+class ResetPasswordDto {
+  @IsNotEmpty({ message: 'User id is required' })
+  @IsNumber()
+  userId: number;
+
+  @IsNotEmpty({ message: 'Reset token is required' })
+  @IsString()
+  resetToken: string;
+
+  @IsNotEmpty({ message: 'Password is required' })
+  @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, { message: 'password too weak' })
+  @MinLength(7)
+  @IsString()
+  public password: string;
+
+  @IsString()
+  @MinLength(7)
+  @Match('password', { message: 'Password does not match' })
+  passwordConfirm: string;
+}
+
+export { CreateUserDto, UserLoginDto, UserMailDto, VerifyToken, MailDto, ResetPasswordDto };

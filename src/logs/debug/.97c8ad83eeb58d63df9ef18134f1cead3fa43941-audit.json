@@ -1,14 +1,19 @@
 {
-  "keep": {
-    "days": false,
-    "amount": 30
-  },
-  "auditLog": "C:\\Users\\HP\\OneDrive\\Desktop\\talent\\src\\logs\\debug\\.97c8ad83eeb58d63df9ef18134f1cead3fa43941-audit.json",
-  "files": [
-    {
-      "date": 1623195889965,
-      "name": "C:\\Users\\HP\\OneDrive\\Desktop\\talent\\src\\logs\\debug\\2021-06-08.log",
-      "hash": "16118ec24ed33963f7b1bc2975579f3e"
-    }
-  ]
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "C:\\Users\\HP\\OneDrive\\Desktop\\talent\\src\\logs\\debug\\.97c8ad83eeb58d63df9ef18134f1cead3fa43941-audit.json",
+    "files": [
+        {
+            "date": 1623195889965,
+            "name": "C:\\Users\\HP\\OneDrive\\Desktop\\talent\\src\\logs\\debug\\2021-06-08.log",
+            "hash": "16118ec24ed33963f7b1bc2975579f3e"
+        },
+        {
+            "date": 1623273495556,
+            "name": "C:\\Users\\HP\\OneDrive\\Desktop\\talent\\src\\logs\\debug\\2021-06-09.log",
+            "hash": "7240a64b36ba4babe537812876105715"
+        }
+    ]
 }

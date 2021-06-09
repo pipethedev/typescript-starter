@@ -2,7 +2,7 @@ import bcrypt from 'bcrypt';
 import config from 'config';
 import jwt from 'jsonwebtoken';
 import { PrismaClient, User, Token } from '@prisma/client';
-import { CreateUserDto, UserLoginDto, VerifyToken } from '@dtos/users.dto';
+import { CreateUserDto, ResetPasswordDto, UserLoginDto, VerifyToken } from '@dtos/users.dto';
 import HttpException from '@exceptions/HttpException';
 import { DataStoredInToken, TokenData } from '@interfaces/auth.interface';
 import { isEmpty } from '@utils/util';
@@ -29,19 +29,19 @@ class AuthService {
     return createUserData;
   }
 
-  public async login(userData: UserLoginDto): Promise<{ cookie: string; findUser: User }> {
+  public async login(userData: UserLoginDto): Promise<{ cookie: string; findUser: User; tokenData: TokenData }> {
     if (isEmpty(userData)) throw new HttpException(400, "You're not userData");
 
     const findUser: User = await this.users.findUnique({ where: { email: userData.email } });
     if (!findUser) throw new HttpException(409, `You're email ${userData.email} not found`);
 
     const isPasswordMatching: boolean = await bcrypt.compare(userData.password, findUser.password);
-    if (!isPasswordMatching) throw new HttpException(409, "You're password not matching");
+    if (!isPasswordMatching) throw new HttpException(401, 'Email or password may be incorrect');
 
     const tokenData = this.createToken(findUser);
     const cookie = this.createCookie(tokenData);
 
-    return { cookie, findUser };
+    return { cookie, findUser, tokenData };
   }
 
   public async logout(userData: User): Promise<User> {
@@ -136,6 +136,77 @@ class AuthService {
     await this.token.delete({
       where: {
         id: VToken.id,
+      },
+    });
+
+    return;
+  }
+
+  async RequestPasswordReset(email: string) {
+    const user = await this.users.findFirst({
+      where: {
+        email,
+      },
+    });
+    if (!user) throw new HttpException(404, 'Email does not exist');
+
+    const token: Token = await this.token.findFirst({
+      where: {
+        userId: user.id,
+      },
+    });
+    if (token)
+      await this.token.delete({
+        where: {
+          id: token.id,
+        },
+      });
+
+    const resetToken = crypto.randomBytes(32).toString('hex');
+    const hash = await bcrypt.hash(resetToken, 10);
+
+    await this.token.create({
+      data: {
+        userId: user.id,
+        token: hash,
+      },
+    });
+
+    const link = `${process.env.CLIENT_URL}/reset-password?uid=${user.id}&resetToken=${resetToken}`;
+
+    // Send Mail
+    await new MailService(user).sendPasswordResetMail(link);
+
+    return;
+  }
+
+  async ResetPassword(data: ResetPasswordDto) {
+    const { userId, resetToken, password } = data;
+
+    const token: Token = await this.token.findFirst({
+      where: {
+        userId,
+      },
+    });
+    if (!token) throw new HttpException(401, 'Invalid or expired password reset token');
+
+    const isValid = await bcrypt.compare(resetToken, token.token);
+    if (!isValid) throw new HttpException(401, 'Invalid or expired password reset token');
+
+    const hash = await bcrypt.hash(password, 10);
+
+    await this.users.update({
+      where: {
+        id: userId,
+      },
+      data: {
+        password: hash,
+      },
+    });
+
+    await this.token.delete({
+      where: {
+        id: token.id,
       },
     });
 

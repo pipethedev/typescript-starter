@@ -402,3 +402,9 @@ type UserCreateInput {
 2021-06-08 22:29:51 error: [POST] /api/auth/verify >> StatusCode:: 401, Message:: Invalid or expired password reset token
 2021-06-08 22:29:51 info: [0mPOST /api/auth/verify [33m401[0m 634.832 ms - 53[0m
 2021-06-08 22:30:14 info: [0mPOST /api/auth/verify [32m200[0m 396.241 ms - 41[0m
+2021-06-08 22:40:23 info: =================================
+2021-06-08 22:40:23 info: ======= ENV: development =======
+2021-06-08 22:40:23 info: 🚀 App listening on the port 3000
+2021-06-08 22:40:23 info: =================================
+2021-06-08 22:40:27 info: [0mGET /api/users [32m200[0m 610.090 ms - 198[0m
+2021-06-08 22:40:28 info: [0mGET /favicon.ico [33m404[0m 3.318 ms - 150[0m
