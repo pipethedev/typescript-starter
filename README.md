@@ -32,15 +32,16 @@ Make sure you have mysql or postgresql installed, you could use any database of 
 
 ## Routes
 
-| Routes                                                           | Description
-| [POST] &nbsp; /api/auth/signup                                   | Create a new account
-| [POST] &nbsp; /api/auth/login                                    | User sign in
-| [POST] &nbsp; /api/auth/request-email-verification               | Resend verfication email
-| [POST] &nbsp; /api/auth/verify-email                             | Email verification
-| [POST] &nbsp; /api/auth/request-password-reset                   | Sends a request password email
-| [POST] &nbsp; /api/auth/reset-password                           | Reset password form handler
-| [POST] &nbsp; /api/users                                         | Create a user
-| [GET] &nbsp; /api/users                                          | Get all users
-| [GET] &nbsp; /api/users/:userId                                  | Get a user
-| [UPDATE] &nbsp; /api/users/::userId                              | Update a user
-| [DELETE] &nbsp; /api/users/:userId                               | Creat a post
+| Routes                                                           | Description                              | Auth roles                            |
+| -----------------------------------------------------------------|----------------------------------------- | ------------------------------------- |
+| [POST] &nbsp; /api/auth/sign-up                                  | Create a new account                     | none
+| [POST] &nbsp; /api/auth/sign-in                                  | User sign in                             | none
+| [POST] &nbsp; /api/auth/request-email-verification               | Resend verfication email                 | none
+| [POST] &nbsp; /api/auth/verify-email                             | Email verification                       | none
+| [POST] &nbsp; /api/auth/request-password-reset                   | Sends a request password email           | none
+| [POST] &nbsp; /api/auth/reset-password                           | Reset password form handler              | none
+| [POST] &nbsp; /api/users                                         | Create a user                            | User
+| [GET] &nbsp; /api/users                                          | Get all users                            | Admin
+| [GET] &nbsp; /api/users/:userId                                  | Get a user                               | User
+| [UPDATE] &nbsp; /api/users/::userId                              | Update a user                            | User
+| [DELETE] &nbsp; /api/users/:userId                               | Delete a user                            | Admin

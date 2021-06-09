@@ -232,3 +232,7 @@ type UserCreateInput {
 2021-06-08 19:44:58 info: ======= ENV: development =======
 2021-06-08 19:44:58 info: 🚀 App listening on the port 3000
 2021-06-08 19:44:58 info: =================================
+2021-06-08 20:09:32 info: [0mGET /api-docs/swagger-ui-init.js [36m304[0m 112.986 ms - -[0m
+2021-06-08 20:09:32 info: [0mGET /api-docs/swagger-ui-standalone-preset.js [36m304[0m 14.167 ms - -[0m
+2021-06-08 20:09:32 info: [0mGET /api-docs/swagger-ui-bundle.js [36m304[0m 8.919 ms - -[0m
+2021-06-08 20:09:32 info: [0mGET /api-docs/swagger-ui.css [36m304[0m 21.434 ms - -[0m

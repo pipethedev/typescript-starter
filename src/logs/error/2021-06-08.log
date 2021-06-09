@@ -131,3 +131,15 @@ Error: listen EADDRINUSE: address already in use :::3000
     at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
     at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
     at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
+2021-06-08 20:13:49 error: uncaughtException: listen EADDRINUSE: address already in use :::3000
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (net.js:1318:16)
+    at listenInCluster (net.js:1366:12)
+    at Server.listen (net.js:1452:7)
+    at Function.listen (C:\Users\HP\OneDrive\Desktop\talent\node_modules\express\lib\application.js:618:24)
+    at App.listen (C:\Users\HP\OneDrive\Desktop\talent\src\app.ts:32:14)
+    at Object.<anonymous> (C:\Users\HP\OneDrive\Desktop\talent\src\server.ts:14:5)
+    at Module._compile (internal/modules/cjs/loader.js:1068:30)
+    at Module.m._compile (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1295:23)
+    at Module._extensions..js (internal/modules/cjs/loader.js:1097:10)
+    at Object.require.extensions.<computed> [as .ts] (C:\Users\HP\OneDrive\Desktop\talent\node_modules\ts-node\src\index.ts:1298:12)
