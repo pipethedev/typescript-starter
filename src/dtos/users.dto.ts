@@ -23,4 +23,8 @@ class UserLoginDto {
   public password: string;
 }
 
-export { CreateUserDto, UserLoginDto };
+class UserMailDto {
+  name: string;
+  email: string;
+}
+export { CreateUserDto, UserLoginDto, UserMailDto };

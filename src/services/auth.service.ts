@@ -1,14 +1,19 @@
 import bcrypt from 'bcrypt';
 import config from 'config';
 import jwt from 'jsonwebtoken';
-import { PrismaClient, User } from '@prisma/client';
+import { PrismaClient, User, Token } from '@prisma/client';
 import { CreateUserDto, UserLoginDto } from '@dtos/users.dto';
 import HttpException from '@exceptions/HttpException';
 import { DataStoredInToken, TokenData } from '@interfaces/auth.interface';
 import { isEmpty } from '@utils/util';
+import BCRYPT_SALT from './../configs';
+import url from './../configs';
+import MailService from './mail.service';
+import crypto from 'crypto';
 
 class AuthService {
   public users = new PrismaClient().user;
+  public token = new PrismaClient().token;
 
   public async signup(userData: CreateUserDto): Promise<User> {
     if (isEmpty(userData)) throw new HttpException(400, "You're not userData");
@@ -19,6 +24,9 @@ class AuthService {
     const hashedPassword = await bcrypt.hash(userData.password, 10);
 
     const createUserData: Promise<User> = this.users.create({ data: { ...userData, password: hashedPassword } });
+
+    // Request email verification
+    await this.RequestEmailVerification(userData.email);
 
     return createUserData;
   }
@@ -57,6 +65,44 @@ class AuthService {
 
   public createCookie(tokenData: TokenData): string {
     return `Authorization=${tokenData.token}; HttpOnly; Max-Age=${tokenData.expiresIn};`;
+  }
+
+  //Send Verification to user
+  async RequestEmailVerification(email: string) {
+    const user = await this.users.findFirst({
+      where: {
+        email,
+      },
+    });
+    if (!user) throw new HttpException(404, 'Email does not exist');
+    if (user.isVerified) throw new HttpException(409, 'Email is already verified');
+
+    const token: Token = await this.token.findFirst({
+      where: {
+        userId: user.id,
+      },
+    });
+    if (token)
+      await this.token.delete({
+        where: {
+          userId: user.id,
+        },
+      });
+
+    const verifyToken = crypto.randomBytes(32).toString('hex');
+    const hash = await bcrypt.hash(verifyToken, BCRYPT_SALT);
+
+    await this.token.create({
+      userId: user.id,
+      token: hash,
+      createdAt: Date.now(),
+    });
+    const link = `${url.CLIENT_URL}/email-verification?uid=${user.id}&verifyToken=${verifyToken}`;
+
+    // Send Mail
+    await new MailService(user).sendEmailVerificationMail(link);
+
+    return;
   }
 }
 
