@@ -4,6 +4,7 @@ import { CreateUserDto, VerifyToken, MailDto, ResetPasswordDto, UserLoginDto } f
 import Route from '@interfaces/routes.interface';
 import authMiddleware from '@middlewares/auth.middleware';
 import validationMiddleware from '@middlewares/validation.middleware';
+import upload from '@middlewares/multer.middleware';
 
 class AuthRoute implements Route {
   public path = '/auth';
@@ -15,7 +16,7 @@ class AuthRoute implements Route {
   }
 
   private initializeRoutes() {
-    this.router.post(`${this.path}/signup`, validationMiddleware(CreateUserDto, 'body'), this.authController.signUp);
+    this.router.post(`${this.path}/signup`, upload('img'), validationMiddleware(CreateUserDto, 'body'), this.authController.signUp);
     this.router.post(`${this.path}/login`, validationMiddleware(UserLoginDto, 'body'), this.authController.logIn);
     this.router.post(`${this.path}/verify`, validationMiddleware(VerifyToken, 'body'), this.authController.verify);
     this.router.post(`${this.path}/logout`, authMiddleware, this.authController.logOut);

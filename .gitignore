@@ -2,6 +2,7 @@ node_modules
 dist
 
 src/logs
+uploads/
 # production env files
 .env
 src/configs/env/prod.env.json

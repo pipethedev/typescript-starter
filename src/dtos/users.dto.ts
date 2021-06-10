@@ -10,16 +10,19 @@ class CreateUserDto {
   @IsEmail()
   public email: string;
 
+  @IsNotEmpty({ message: 'Image is required' })
+  public img: File;
+
   @IsNotEmpty({ message: 'Password is required' })
   @MinLength(7)
-  @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, { message: 'password too weak' })
+  //@Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, { message: 'password too weak' })
   @IsString()
   public password: string;
 
-  @IsString()
-  @MinLength(7)
-  @Match('password')
-  passwordConfirm: string;
+  // @IsString()
+  // @MinLength(7)
+  // @Match('password', { message: 'Password does not match'})
+  // passwordConfirm: string;
 }
 
 class UserLoginDto {

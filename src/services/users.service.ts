@@ -25,7 +25,6 @@ class UserService {
 
     const findUser: User = await this.users.findUnique({ where: { email: userData.email } });
     if (findUser) throw new HttpException(409, `You're email ${userData.email} already exists`);
-
     const hashedPassword = await bcrypt.hash(userData.password, 10);
     return await this.users.create({ data: { ...userData, password: hashedPassword } });
   }

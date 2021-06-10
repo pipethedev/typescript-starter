@@ -16,6 +16,7 @@ paths:
           description: 'Server Error'
 
     # [POST] users
+    /api/auth/signup:
     post:
       tags:
         - users

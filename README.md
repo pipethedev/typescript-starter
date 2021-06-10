@@ -12,7 +12,6 @@ This project was generated with ❤.
 
 4. Create a new file `.env` if it doesn't exist and copy the contents of `env.dev` into it to be able to run your server on production environment.
 
-5. Then you need to provide values for the configuration env files at the `src/configs/env directory`.
 
 ## Setting up db
 Make sure you have mysql or postgresql installed, you could use any database of your choice
@@ -21,7 +20,7 @@ Make sure you have mysql or postgresql installed, you could use any database of 
 
 2. Connect to your db by providing the appropriate credentials, check .env.dev for a similar example
 
-3. Migrate Database - `prisma migrate dev --name init`
+3. Migrate the Database - `prisma migrate dev --name init`
 
 ## Running the server locally
 
