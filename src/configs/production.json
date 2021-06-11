@@ -1,4 +1,4 @@
 {
-    "env": "production",
-    "secretKey": "secretKey"
+  "env": "production",
+  "secretKey": "secretKey"
 }

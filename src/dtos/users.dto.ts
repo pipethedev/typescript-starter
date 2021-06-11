@@ -11,7 +11,7 @@ class CreateUserDto {
   public email: string;
 
   @IsNotEmpty({ message: 'Image is required' })
-  public img: File;
+  public img: string;
 
   @IsNotEmpty({ message: 'Password is required' })
   @MinLength(7)

@@ -1,14 +1,14 @@
 {
-    "keep": {
-        "days": false,
-        "amount": 30
-    },
-    "auditLog": "C:\\Users\\HP\\OneDrive\\Desktop\\talent\\dist\\logs\\error\\.f794145503009200c1d8831dcc5d151993851e5a-audit.json",
-    "files": [
-        {
-            "date": 1623208578439,
-            "name": "C:\\Users\\HP\\OneDrive\\Desktop\\talent\\dist\\logs\\error\\2021-06-08.log",
-            "hash": "d4cf2349dd3682b200e24e8e90833a3f"
-        }
-    ]
+  "keep": {
+    "days": false,
+    "amount": 30
+  },
+  "auditLog": "C:\\Users\\HP\\OneDrive\\Desktop\\talent\\dist\\logs\\error\\.f794145503009200c1d8831dcc5d151993851e5a-audit.json",
+  "files": [
+    {
+      "date": 1623208578439,
+      "name": "C:\\Users\\HP\\OneDrive\\Desktop\\talent\\dist\\logs\\error\\2021-06-08.log",
+      "hash": "d4cf2349dd3682b200e24e8e90833a3f"
+    }
+  ]
 }

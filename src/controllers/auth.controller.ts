@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { User } from '@prisma/client';
-import { CreateUserDto, ResetPasswordDto, UserLoginDto, VerifyToken } from "@dtos/users.dto";
+import { CreateUserDto, ResetPasswordDto, UserLoginDto, VerifyToken } from '@dtos/users.dto';
 import { RequestWithUser } from '@interfaces/auth.interface';
 import AuthService from '@services/auth.service';
 
