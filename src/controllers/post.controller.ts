@@ -10,8 +10,9 @@ class PostController {
   public create = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       const postData: PostDTO = req.body;
-      const post: Post = await this.postService.createPost(postData);
-
+      postData.authorId = req.user.id;
+      postData.img = req.files;
+      const post: Post = await this.postService.createPost(postData, postData.img);
       res.status(201).json({ data: post, message: 'Post draft saved successfully' });
     } catch (error) {
       next(error);

@@ -4,6 +4,7 @@ import Route from '@interfaces/routes.interface';
 import { PostDTO, UpdatePostDto } from '@dtos/post.dto';
 import authMiddleware from '@middlewares/auth.middleware';
 import validationMiddleware from '@middlewares/validation.middleware';
+import { upload } from '@middlewares/multer.middleware';
 
 class PostRoute implements Route {
   public path = '/posts';
@@ -16,7 +17,7 @@ class PostRoute implements Route {
 
   private initializeRoutes() {
     //create a post
-    this.router.post(`${this.path}/create`, authMiddleware, validationMiddleware(PostDTO, 'body'), this.postController.create);
+    this.router.post(`${this.path}/create`, authMiddleware, upload.array('img'), validationMiddleware(PostDTO, 'body'), this.postController.create);
     //publish a post
     this.router.put(`${this.path}/publish/:id(\\d+)`, authMiddleware, validationMiddleware(PostDTO, 'param', true), this.postController.publish);
     //get post by id

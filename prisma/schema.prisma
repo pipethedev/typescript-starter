@@ -16,7 +16,7 @@ model Post {
   updatedAt DateTime @updatedAt
   title     String   @db.VarChar(255)
   content   String?  @db.Text
-  img       String?   @db.VarChar(200)
+  img       Json?    @db.Json     
   published Boolean  @default(false)
   author    User     @relation(fields: [authorId], references: [id])
   authorId  Int
@@ -26,7 +26,7 @@ model User {
   id      Int      @default(autoincrement()) @id
   email   String   @unique
   name    String
-  img     String?
+  img     String 
   password String
   isVerified Boolean @default(false)
   posts   Post[]

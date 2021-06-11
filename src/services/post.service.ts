@@ -6,12 +6,13 @@ import { isEmpty } from '@utils/util';
 class PostService {
   public post = new PrismaClient().post;
 
-  public async createPost(postData: PostDTO): Promise<Post> {
+  public async createPost(postData: PostDTO, buffed): Promise<Post> {
     if (isEmpty(postData)) throw new HttpException(400, "You're not postData");
 
     const post = await this.post.create({
       data: {
         ...postData,
+        img: buffed,
       },
     });
 

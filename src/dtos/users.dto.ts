@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsNumber, IsString, Matches, MinLength } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsNumber, IsOptional, IsString, Matches, MinLength } from 'class-validator';
 import { Match } from '@utils/match.decorator';
 
 class CreateUserDto {
@@ -10,8 +10,9 @@ class CreateUserDto {
   @IsEmail()
   public email: string;
 
-  @IsNotEmpty({ message: 'Image is required' })
-  public img: string;
+  //@IsNotEmpty({ message: 'Image is required' })
+  @IsOptional()
+  public img: Buffer;
 
   @IsNotEmpty({ message: 'Password is required' })
   @MinLength(7)

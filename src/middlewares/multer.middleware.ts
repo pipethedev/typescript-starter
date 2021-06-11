@@ -1,14 +1,24 @@
-import upload from './../utils/multer';
-import { NextFunction, Request, Response } from 'express';
+import multer from 'multer';
+import { Request } from 'express';
 
-async function addPathToBody(req: Request, res: Response, next: NextFunction) {
-  if (req.files) req.body['images'] = req.files.map(file => file.path.replace('\\', '/'));
+const storage = multer.diskStorage({
+  destination: (req: Request, file, cb) => {
+    cb(null, './uploads');
+  },
+  filename: (req: Request, file, cb) => {
+    cb(null, `${Date.now()}-${file.originalname}`);
+  },
+});
 
-  if (req.file) req.body['image'] = req.file.path.replace('\\', '/');
-
-  next();
-}
-
-export default field => {
-  return [upload.single(field), addPathToBody];
+const options: multer.Options = {
+  storage,
+  limits: {
+    fileSize: 2000000,
+  },
+  fileFilter(req: Request, file, cb) {
+    if (!file.originalname.match(/\.(jpg|png|JPG|PNG|JPEG|jpeg)$/)) return cb(new Error('file format incorrect'));
+    cb(null, true);
+  },
 };
+
+export const upload = multer(options);

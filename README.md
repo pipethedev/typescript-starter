@@ -10,7 +10,7 @@ This project was generated with ❤.
 
 3. Install dependencies - `npm install`
 
-4. Create a new file `.env` if it doesn't exist and copy the contents of `env.dev` into it to be able to run your server on production environment.
+4. Create a new file `.env` if it doesn't exist and copy the contents of `.env.example` into it to be able to run your server on production environment.
 
 ## Setting up db
 
@@ -18,7 +18,7 @@ Make sure you have mysql or postgresql installed, you could use any database of 
 
 1. Initialize Prisma - `npx prisma init`
 
-2. Connect to your db by providing the appropriate credentials, check .env.dev for a similar example
+2. Connect to your db by providing the appropriate credentials, check .env.example for a similar example
 
 3. Migrate the Database - `prisma migrate dev --name init`
 

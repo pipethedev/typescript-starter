@@ -1,7 +1,7 @@
 import { IsNotEmpty, IsOptional, IsString, IsNumber } from 'class-validator';
 
 class PostDTO {
-  @IsNotEmpty({ message: 'Author id is required' })
+  @IsOptional()
   @IsNumber()
   authorId: number;
 
@@ -13,7 +13,7 @@ class PostDTO {
   content: string;
 
   @IsOptional()
-  img: string;
+  img: Buffer;
 }
 
 class UpdatePostDto {

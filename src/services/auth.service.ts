@@ -13,7 +13,7 @@ class AuthService {
   public users = new PrismaClient().user;
   public token = new PrismaClient().token;
 
-  public async signup(userData: CreateUserDto): Promise<User> {
+  public async signup(userData: CreateUserDto, buffed): Promise<User> {
     if (isEmpty(userData)) throw new HttpException(400, "You're not userData");
 
     const findUser: User = await this.users.findUnique({ where: { email: userData.email } });
@@ -21,7 +21,7 @@ class AuthService {
 
     const hashedPassword = await bcrypt.hash(userData.password, 10);
 
-    const createUserData = await this.users.create({ data: { ...userData, password: hashedPassword } });
+    const createUserData = await this.users.create({ data: { ...userData, img: buffed, password: hashedPassword } });
 
     // Request email verification
     await this.RequestEmailVerification(userData.email);
