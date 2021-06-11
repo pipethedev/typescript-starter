@@ -12,7 +12,7 @@ class CreateUserDto {
 
   //@IsNotEmpty({ message: 'Image is required' })
   @IsOptional()
-  public img: Buffer;
+  public img: string;
 
   @IsNotEmpty({ message: 'Password is required' })
   @MinLength(7)

@@ -22,6 +22,10 @@ Make sure you have mysql or postgresql installed, you could use any database of 
 
 3. Migrate the Database - `prisma migrate dev --name init`
 
+## Viewing your database
+
+1. Start up prisma studio - Run `npx prisma studio`
+
 ## Running the server locally
 
 1. Start up the server - Run `npm start` | `npm run dev`

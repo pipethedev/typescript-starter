@@ -13,7 +13,7 @@ class PostDTO {
   content: string;
 
   @IsOptional()
-  img: Buffer;
+  img: string;
 }
 
 class UpdatePostDto {

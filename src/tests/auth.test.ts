@@ -16,6 +16,7 @@ describe('Testing Auth', () => {
         name: 'Random Dev',
         email: 'test@email.com',
         password: 'q1w2e3r4',
+        img: '',
       };
 
       const authRoute = new AuthRoute();

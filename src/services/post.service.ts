@@ -9,10 +9,16 @@ class PostService {
   public async createPost(postData: PostDTO, buffed): Promise<Post> {
     if (isEmpty(postData)) throw new HttpException(400, "You're not postData");
 
+    //get information from buffed
+    const images = [];
+    for (const i in buffed) {
+      images.push(buffed[i].path);
+    }
+
     const post = await this.post.create({
       data: {
         ...postData,
-        img: buffed,
+        img: images,
       },
     });
 
