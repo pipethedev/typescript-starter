@@ -41,7 +41,7 @@ class UsersController {
 
   public deleteUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const userId = 1; //Number(req.user.id);
+      const userId = Number(req.user.id);
       const deleteUserData: User = await this.userService.deleteUser(userId);
 
       res.status(200).json({ data: deleteUserData, message: 'deleted' });

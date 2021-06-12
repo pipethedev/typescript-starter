@@ -32,6 +32,11 @@ Make sure you have mysql or postgresql installed, you could use any database of 
 
 2. Server should be running on http://localhost:2020/ by default 
 
+## e2e Tests
+
+1. Start up `npm run test`
+
+
 ## Testing the api
 
 1. Via Postman Collection (https://documenter.getpostman.com/view/11039127/TzeTJpNs)
