@@ -4,11 +4,11 @@ This project was generated with ❤.
 
 ## Installation
 
-1. Clone repository - `git clone `
+1. Clone repository - `$ git clone https://github.com/Fn-studyo/talentQL-task.git`
 
-2. Install dependencies - `cd talent`
+2. Install dependencies - `$ cd talent`
 
-3. Install dependencies - `npm install`
+3. Install dependencies - `$ npm install`
 
 4. Create a new file `.env` if it doesn't exist and copy the contents of `.env.example` into it to be able to run your server on production environment.
 
@@ -16,25 +16,25 @@ This project was generated with ❤.
 
 Make sure you have mysql or postgresql installed, you could use any database of your choice
 
-1. Initialize Prisma - `npx prisma init`
+1. Initialize Prisma - `$ npx prisma init`
 
 2. Connect to your db by providing the appropriate credentials, check .env.example for a similar example
 
-3. Migrate the Database - `prisma migrate dev --name init`
+3. Migrate the Database - `$ prisma migrate dev --name init`
 
 ## Viewing your database
 
-1. Start up prisma studio - Run `npx prisma studio`
+1. Start up prisma studio - Run `$ npx prisma studio`
 
 ## Running the server locally
 
-1. Start up the server - Run `npm start` | `npm run dev`
+1. Start up the server - Run `$ npm start` | `$ npm run dev`
 
 2. Server should be running on http://localhost:2020/ by default 
 
 ## e2e Tests
 
-1. Start up `npm run test`
+1. Start up `$ npm run test`
 
 
 ## Testing the api
@@ -58,3 +58,4 @@ Make sure you have mysql or postgresql installed, you could use any database of 
 | [GET] &nbsp; /api/posts/create                     | Create a post                  | User       |
 | [GET] &nbsp; /api/posts/publish/:bookId            | Publish a book                 | User       |
 | [GET] &nbsp; /api/user                             | Get users details              | User       |
+| [DELETE] &nbsp; /api/user                          | Delete a user                  | User       |
