@@ -66,9 +66,10 @@ class App {
     const options = {
       swaggerDefinition: {
         info: {
-          title: 'REST API',
+          openapi: '3.0.0',
+          title: 'CoderByte Task',
           version: '1.0.0',
-          description: 'Example docs',
+          description: 'Api playgroud for api coderbyte task',
         },
       },
       apis: ['swagger.yaml'],

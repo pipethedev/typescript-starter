@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { User } from '@prisma/client';
-import { CreateUserDto } from '@dtos/users.dto';
+import { UpdateUserDto } from '@dtos/users.dto';
 import userService from '@services/users.service';
 
 class UsersController {
@@ -29,8 +29,8 @@ class UsersController {
 
   public updateUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const userId = Number(req.params.id);
-      const userData: CreateUserDto = req.body;
+      const userId = 1; //Number(req.user.id);
+      const userData: UpdateUserDto = req.body;
       const updateUserData: User = await this.userService.updateUser(userId, userData);
 
       res.status(200).json({ data: updateUserData, message: 'updated' });
@@ -41,7 +41,7 @@ class UsersController {
 
   public deleteUser = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
-      const userId = Number(req.params.id);
+      const userId = 1; //Number(req.user.id);
       const deleteUserData: User = await this.userService.deleteUser(userId);
 
       res.status(200).json({ data: deleteUserData, message: 'deleted' });

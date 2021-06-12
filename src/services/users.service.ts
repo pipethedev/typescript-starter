@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import { PrismaClient, User } from '@prisma/client';
-import { CreateUserDto } from '@dtos/users.dto';
+import { CreateUserDto, UpdateUserDto } from '@dtos/users.dto';
 import HttpException from '@exceptions/HttpException';
 import { isEmpty } from '@utils/util';
 
@@ -29,14 +29,13 @@ class UserService {
     return await this.users.create({ data: { ...userData, password: hashedPassword } });
   }
 
-  public async updateUser(userId: number, userData: CreateUserDto): Promise<User> {
-    if (isEmpty(userData)) throw new HttpException(400, "You're not userData");
+  public async updateUser(userId: number, userData: UpdateUserDto): Promise<User> {
+    if (isEmpty(userData)) throw new HttpException(400, "You're not a updateData");
 
     const findUser: User = await this.users.findUnique({ where: { id: userId } });
-    if (!findUser) throw new HttpException(409, "You're not user");
+    if (!findUser) throw new HttpException(404, 'User not found');
 
-    const hashedPassword = await bcrypt.hash(userData.password, 10);
-    return await this.users.update({ where: { id: userId }, data: { ...userData, password: hashedPassword } });
+    return await this.users.update({ where: { id: userId }, data: { ...userData } });
   }
 
   public async deleteUser(userId: number): Promise<User> {

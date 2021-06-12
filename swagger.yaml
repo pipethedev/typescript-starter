@@ -1,130 +1,202 @@
-tags:
-  - name: users
-    description: users API
-
+# servers:
+#   - url: http://localhost:3000
+# components:
+#   securitySchemes:
+#     bearerAuth:
+#       type: http
+#       scheme: bearer
+# security:
+#   - bearerAuth: []
 paths:
-  # [GET] users
-  /users:
-    get:
-      tags:
-        - users
-      summary: Find All Users
-      responses:
-        200:
-          description: 'OK'
-        500:
-          description: 'Server Error'
-
-    # [POST] users
-    /api/auth/signup:
+  /api/auth/signup:
     post:
       tags:
-        - users
-      summary: Add User
-      parameters:
-        - name: body
-          in: body
-          description: user Data
-          required: true
-          schema:
-            $ref: '#/definitions/users'
+        - default
+      summary: Register a user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Muritala David
+                email: davmuri1414@gmail.com
+                password: Famzer22@
+                img: ok
       responses:
-        201:
-          description: 'Created'
-        400:
-          description: 'Bad Request'
-        409:
-          description: 'Conflict'
-        500:
-          description: 'Server Error'
-
-  # [GET] users/id
-  /users/{id}:
-    get:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/auth/verify:
+    post:
       tags:
-        - users
-      summary: Find User By Id
-      parameters:
-        - name: id
-          in: path
-          description: User Id
-          required: true
-          type: integer
+        - default
+      summary: Verify A User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                token: >-
+                  8aff3e468636878d22163d5122c38b87125bff813ec2d846a83f9cf03498d7a7
+                id: 4
       responses:
-        200:
-          description: 'OK'
-        409:
-          description: 'Conflict'
-        500:
-          description: 'Server Error'
-
-    # [PUT] users/id
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/auth/request-email-verification:
+    post:
+      tags:
+        - default
+      summary: Request Email Verification
+      requestBody:
+        content: {}
+      parameters:
+        - name: email
+          in: query
+          schema:
+            type: string
+          example: davmuri1414@gmail.com
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/auth/request-password-reset:
+    post:
+      tags:
+        - default
+      summary: Request Reset Password
+      requestBody:
+        content: {}
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: email
+          in: query
+          schema:
+            type: string
+          example: davmuri1414@gmail.com
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/users:
     put:
       tags:
-        - users
-      summary: Update User By Id
-      parameters:
-        - name: id
-          in: path
-          description: user Id
-          required: true
-          type: integer
-        - name: body
-          in: body
-          description: user Data
-          required: true
-          schema:
-            $ref: '#/definitions/users'
+        - default
+      summary: Update A User
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                name: Bode Thomas
+      security:
+        - bearerAuth: []
       responses:
-        200:
-          description: 'OK'
-        400:
-          description: 'Bad Request'
-        409:
-          description: 'Conflict'
-        500:
-          description: 'Server Error'
-
-    # [DELETE] users/id
-    delete:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/auth/login:
+    post:
       tags:
-        - users
-      summary: Delete User By Id
-      parameters:
-        - name: id
-          in: path
-          description: user Id
-          required: true
-          type: integer
+        - default
+      summary: Login a user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                email: davmuri1414@gmail.com
+                password: Famzer22@
       responses:
-        200:
-          description: 'OK'
-        409:
-          description: 'Conflict'
-        500:
-          description: 'Server Error'
-
-# definitions
-definitions:
-  users:
-    type: object
-    required:
-      - email
-      - password
-    properties:
-      id:
-        type: integer
-        description: user Id
-      name:
-        type: string
-        description: user Name
-      email:
-        type: string
-        description: user Email
-      password:
-        type: string
-        description: user Password
-
-schemes:
-  - https
-  - http
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/auth/reset-password:
+    post:
+      tags:
+        - default
+      summary: Reset Password
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                userId: 1
+                resetToken: >-
+                  2db3c6ef4e116445ace1d8a5c582bd3098e4fc5a64b7bff33a47098a713908fa
+                password: passerBy22@
+                passwordConfirm: passerBy22@
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/posts/create:
+    post:
+      tags:
+        - default
+      summary: Create a post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                authorId: 4
+                title: Example
+                content: A content
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/posts/publish/1:
+    put:
+      tags:
+        - default
+      summary: Publish Post
+      requestBody:
+        content: {}
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/posts/1:
+    get:
+      tags:
+        - default
+      summary: Get Post By Id
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /api/posts/posts/4:
+    get:
+      tags:
+        - default
+      summary: Get all posts
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

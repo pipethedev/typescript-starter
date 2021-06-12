@@ -26,6 +26,24 @@ class CreateUserDto {
   // passwordConfirm: string;
 }
 
+class UpdateUserDto {
+  @IsOptional()
+  @IsString()
+  public name?: string;
+
+  @IsOptional()
+  @IsEmail()
+  public email?: string;
+
+  //@IsNotEmpty({ message: 'Image is required' })
+  @IsOptional()
+  public img?: string;
+
+  @IsOptional()
+  @IsString()
+  public password?: string;
+}
+
 class UserLoginDto {
   @IsEmail()
   public email: string;
@@ -77,4 +95,4 @@ class ResetPasswordDto {
   passwordConfirm: string;
 }
 
-export { CreateUserDto, UserLoginDto, UserMailDto, VerifyToken, MailDto, ResetPasswordDto };
+export { CreateUserDto, UserLoginDto, UserMailDto, VerifyToken, MailDto, ResetPasswordDto, UpdateUserDto };

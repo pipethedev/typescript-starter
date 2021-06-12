@@ -1,8 +1,7 @@
 import bcrypt from 'bcrypt';
 import request from 'supertest';
-import { PrismaClient, User } from '@prisma/client';
 import App from '@/app';
-import { CreateUserDto } from '@dtos/users.dto';
+import { CreateUserDto, UpdateUserDto } from '@dtos/users.dto';
 import UserRoute from '@routes/users.route';
 
 afterAll(async () => {
@@ -62,6 +61,7 @@ describe('Testing Users', () => {
         name: 'Random Dev',
         email: 'test@email.com',
         password: 'q1w2e3r4',
+        img: '',
       };
 
       const usersRoute = new UserRoute();
@@ -82,7 +82,7 @@ describe('Testing Users', () => {
   describe('[PUT] /users/:id', () => {
     it('response Update user', async () => {
       const userId = 1;
-      const userData: CreateUserDto = {
+      const userData: UpdateUserDto = {
         name: 'James pipe',
         email: 'test@email.com',
         password: 'q1w2e3r4',
@@ -114,6 +114,7 @@ describe('Testing Users', () => {
         name: 'Random Dev',
         email: 'test@email.com',
         password: 'q1w2e3r4',
+        img: '',
       };
 
       const usersRoute = new UserRoute();
