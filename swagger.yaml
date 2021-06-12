@@ -188,7 +188,7 @@ paths:
           description: Successful response
           content:
             application/json: {}
-  /api/posts/posts/4:
+  /api/posts:
     get:
       tags:
         - default

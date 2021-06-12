@@ -30,7 +30,13 @@ Make sure you have mysql or postgresql installed, you could use any database of 
 
 1. Start up the server - Run `npm start` | `npm run dev`
 
-2. Server should be running on http://localhost:2020/ by default
+2. Server should be running on http://localhost:2020/ by default 
+
+## Testing the api
+
+1. Via Postman Collection (https://documenter.getpostman.com/view/11039127/TzeTJpNs)
+
+2. Via Swagger, viewing the api locally (http://localhost:3000/api-docs)
 
 ## Routes
 
@@ -38,13 +44,12 @@ Make sure you have mysql or postgresql installed, you could use any database of 
 | -------------------------------------------------- | ------------------------------ | ---------- |
 | [POST] &nbsp; /api/auth/signup                     | Create a new account           | none       |
 | [POST] &nbsp; /api/auth/login                      | User sign in                   | none       |
-| [POST] &nbsp; /api/auth/logout                     | Logout a user                  | none       |
+| [POST] &nbsp; /api/auth/logout                     | Logout a user                  | User       |
 | [POST] &nbsp; /api/auth/request-email-verification | Resend verfication email       | none       |
 | [POST] &nbsp; /api/auth/verify-email               | Email verification             | none       |
 | [POST] &nbsp; /api/auth/request-password-reset     | Sends a request password email | none       |
 | [POST] &nbsp; /api/auth/reset-password             | Reset password form handler    | none       |
-| [POST] &nbsp; /api/users                           | Create a user                  | User       |
-| [GET] &nbsp; /api/users                            | Get all users                  | Admin      |
-| [GET] &nbsp; /api/users/:userId                    | Get a user                     | User       |
-| [UPDATE] &nbsp; /api/users/::userId                | Update a user                  | User       |
-| [DELETE] &nbsp; /api/users/:userId                 | Delete a user                  | Admin      |
+| [PUT] &nbsp; /api/users                            | Update a user                  | User       |
+| [GET] &nbsp; /api/posts/create                     | Create a post                  | User       |
+| [GET] &nbsp; /api/posts/publish/:bookId            | Publish a book                 | User       |
+| [GET] &nbsp; /api/user                             | Get users details              | User       |
